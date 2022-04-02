@@ -25,8 +25,6 @@ public class GamePanel extends JPanel implements ActionListener{
 	Timer timer;
 	Random random;
 	
-	
-	
 	//constructor
 	GamePanel(){
 		random = new Random();
@@ -37,10 +35,14 @@ public class GamePanel extends JPanel implements ActionListener{
 		startGame();
 	}
 	public void startGame() {
-		
+		newApple();
+		running = true;
+		timer = new Timer(DELAY, this);
+		timer.start();
 	}
 	public void paintComponent(Graphics g) {
-		
+		super.paintComponent(g);
+		draw(g);
 	}
 	public void draw(Graphics g) {
 		
